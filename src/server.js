@@ -16,7 +16,7 @@ app.use(cors());
 
 function tryConnection() {
   mongoose
-    .connect(process.env.DB_ROUTE, {
+    .connect(process.env.MONGODB_URI, {
       poolSize: 100,
       connectTimeoutMS: 10000,
       socketTimeoutMS: 10000,
