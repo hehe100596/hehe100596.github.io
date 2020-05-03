@@ -14,7 +14,7 @@ require("dotenv").config();
 
 app.use(cors());
 
-const API_PORT = process.env.API_PORT;
+const API_PORT = process.env.PORT;
 const dbRoute = process.env.DB_ROUTE;
 
 function tryConnection() {
