@@ -13,7 +13,6 @@ export let server = null;
 require("dotenv").config();
 
 app.use(cors());
-console.log("Starting!");
 
 function tryConnection() {
   mongoose
