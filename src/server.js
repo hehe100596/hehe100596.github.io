@@ -14,12 +14,9 @@ require("dotenv").config();
 
 app.use(cors());
 
-const API_PORT = process.env.PORT;
-const dbRoute = process.env.DB_ROUTE;
-
 function tryConnection() {
   mongoose
-    .connect(dbRoute, {
+    .connect(process.env.DB_ROUTE, {
       poolSize: 100,
       connectTimeoutMS: 10000,
       socketTimeoutMS: 10000,
@@ -29,8 +26,10 @@ function tryConnection() {
     })
     .then(
       () =>
-        (server = app.listen(API_PORT, () =>
-          console.log(`Connection established - listening on port: ${API_PORT}`)
+        (server = app.listen(process.env.PORT, () =>
+          console.log(
+            `Connection established - listening on port: ${process.env.PORT}`
+          )
         ))
     )
     .catch((err) => ({}));
